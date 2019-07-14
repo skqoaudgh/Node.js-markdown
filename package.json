@@ -1,0 +1,23 @@
+{
+  "name": "node.js-markdown",
+  "version": "1.0.0",
+  "description": "Markdown page builder made with Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skqoaudgh/Node.js-markdown.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skqoaudgh/Node.js-markdown/issues"
+  },
+  "homepage": "https://github.com/skqoaudgh/Node.js-markdown#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "markdown": "^0.5.0"
+  }
+}
