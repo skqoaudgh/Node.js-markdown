@@ -29,10 +29,43 @@ app.get('/', (req, res, next) => {
 });
 
 app.post('/output', (req, res, next) => {
-    const result = md.render(req.body.inputTextarea);
-    res.render('output.ejs', {output: result});
+    const resultDoc = md.render(req.body.inputTextarea);
+    const resultHTML = resultDoc.trim();
+    res.render('output.ejs', {outputDoc: resultDoc, outputHTML: formatXml(resultHTML)});
 });
 
 app.listen(3000, () => {
     console.log('express server is opened on port 3000.');
 });
+
+function formatXml(xml) {
+    var formatted = '';
+    var reg = /(>)(<)(\/*)/g;
+    xml = xml.replace(/(\r\n|\n|\r)/gm, "");
+    xml = xml.replace(reg, '$1\r\n$2$3');
+    var pad = 0;
+    let strs = xml.split('\r\n');
+    strs.forEach(node => {
+        var indent = 0;
+        if (node.match( /.+<\/\w[^>]*>$/ )) {
+            indent = 0;
+        } else if (node.match( /^<\/\w/ )) {
+            if (pad != 0) {
+                pad -= 1;
+            }
+        } else if (node.match( /^<\w[^>]*[^\/]>.*$/ )) {
+            indent = 1;
+        } else {
+            indent = 0;
+        }
+
+        var padding = '';
+        for (var i = 0; i < pad; i++) {
+            padding += '    ';
+        }
+
+        formatted += padding + node + '\r\n';
+        pad += indent;
+    });
+    return formatted;
+}

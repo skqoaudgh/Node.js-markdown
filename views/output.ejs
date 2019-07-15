@@ -4,14 +4,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="output.css">
         <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/8.7/styles/monokai_sublime.min.css"> 
         <script src="//cdn.jsdelivr.net/highlight.js/8.7/highlight.min.js"></script> 
         <script>hljs.initHighlightingOnLoad();</script>
         <title>Markdown to HTML</title>
     </head>
     <body>
-        <textarea id="result" style="display:none"><%= output %></textarea>
-        <div id="output-wrapper"></div>
+        <div id="wrapper-doc">
+            <textarea id="tempResult-doc" style="display:none"><%= outputDoc %></textarea>
+            <div id="output-doc"></div>  
+        </div>
+        <div id="vertical-line"></div>
+        <div id="wrapper-html">
+            <textarea id="output-html" readonly><%= outputHTML %></textarea>  
+        </div>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="output.js"></script>

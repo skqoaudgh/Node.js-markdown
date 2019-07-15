@@ -1,4 +1,5 @@
-const result = document.getElementById('result');
-const wrapper = document.getElementById('output-wrapper');
+const tempDoc = document.getElementById('tempResult-doc');
+const outputDoc = document.getElementById('output-doc');
+const outputHTML = document.getElementById('output-html');
 
-wrapper.innerHTML = result.value;
+outputDoc.innerHTML = tempDoc.value;
