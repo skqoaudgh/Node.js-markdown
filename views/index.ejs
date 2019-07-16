@@ -13,4 +13,12 @@
             <button id="inputButton">Convert</button>
         </form>
     </body>
+    <script>
+        document.getElementById('inputButton').addEventListener('click', (event) => {
+            localStorage.setItem('markdown', document.getElementById('inputTextarea').value);
+        });
+        window.onload = () => {
+            document.getElementById('inputTextarea').value = localStorage.getItem('markdown');
+        }
+    </script>
 </html>

@@ -11,14 +11,17 @@
         <title>Markdown to HTML</title>
     </head>
     <body>
-        <div id="wrapper-doc">
-            <textarea id="tempResult-doc" style="display:none"><%= outputDoc %></textarea>
-            <div id="output-doc"></div>  
+        <div id="wrapper">
+            <div id="wrapper-doc">
+                <textarea id="tempResult-doc" style="display:none"><%= outputDoc %></textarea>
+                <div id="output-doc"></div>  
+            </div>
+            <div id="vertical-line"></div>
+            <div id="wrapper-html">
+                <textarea id="output-html" readonly><%= outputHTML %></textarea>  
+            </div>
         </div>
-        <div id="vertical-line"></div>
-        <div id="wrapper-html">
-            <textarea id="output-html" readonly><%= outputHTML %></textarea>  
-        </div>
+        <button type="button" id="back">Back</button>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="output.js"></script>
