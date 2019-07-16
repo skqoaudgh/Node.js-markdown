@@ -11,7 +11,7 @@
         <title>Markdown to HTML</title>
     </head>
     <body>
-        <div id="wrapper">
+        <div class="wrapper">
             <div id="wrapper-doc">
                 <textarea id="tempResult-doc" style="display:none"><%= outputDoc %></textarea>
                 <div id="output-doc"></div>  
@@ -21,7 +21,10 @@
                 <textarea id="output-html" readonly><%= outputHTML %></textarea>  
             </div>
         </div>
-        <button type="button" id="back">Back</button>
+        <div class="wrapper">
+            <a type="button" class="btn" id="download" download="markdown.md" href="">Download</a>
+            <button type="button" class="btn" id="back">Back</button>
+        </div>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="output.js"></script>
