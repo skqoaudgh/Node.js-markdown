@@ -15,7 +15,9 @@
     </body>
     <script>
         document.getElementById('inputButton').addEventListener('click', (event) => {
-            localStorage.setItem('markdown', document.getElementById('inputTextarea').value);
+            let text = document.getElementById('inputTextarea').value;
+            text = text.replace(/\n/g, "\r\n");
+            localStorage.setItem('markdown', text);
         });
         window.onload = () => {
             document.getElementById('inputTextarea').value = localStorage.getItem('markdown');
