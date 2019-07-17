@@ -17,10 +17,10 @@
         document.getElementById('inputButton').addEventListener('click', (event) => {
             let text = document.getElementById('inputTextarea').value;
             text = text.replace(/\n/g, "\r\n");
-            localStorage.setItem('markdown', text);
+            sessionStorage.setItem('markdown', text);
         });
         window.onload = () => {
-            document.getElementById('inputTextarea').value = localStorage.getItem('markdown');
+            document.getElementById('inputTextarea').value = sessionStorage.getItem('markdown');
         }
     </script>
 </html>

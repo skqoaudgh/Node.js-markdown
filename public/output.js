@@ -7,7 +7,7 @@ const downloadBtn = document.getElementById('download');
 outputDoc.innerHTML = tempDoc.value;
 outputHTML.innerHTML = outputHTML.value;
 
-downloadBtn.href = window.URL.createObjectURL(new Blob([localStorage.getItem('markdown')], {type: 'text/markdown'}));
+downloadBtn.href = window.URL.createObjectURL(new Blob([sessionStorage.getItem('markdown')], {type: 'text/markdown'}));
 
 backBtn.addEventListener('click', (event) => {
     location.href = "/";
