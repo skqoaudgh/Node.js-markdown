@@ -20,6 +20,6 @@
     "ejs": "^2.6.2",
     "express": "^4.17.1",
     "highlight.js": "^9.15.8",
-    "markdown-it": "^9.0.1"
+    "markdown-it": "^12.3.2"
   }
 }
